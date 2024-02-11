@@ -1,22 +1,19 @@
-import Layout from "@/components/Layout/Layout";
-import router from "next/router";
+import LayoutLogin from "@/components/Layout/LayoutLogin";
+import { LoginForm } from "@/components/LoginForm/LoginForm";
 import React, { ReactElement } from "react";
+import login from "@/components/LoginForm/LoginForm.module.scss";
 
-export default function About() {
+export default function Login() {
   return (
-    <main>
+    <div className={`${login.loginPage}`}>
       <h2>Login page</h2>
-      <form onSubmit={() => router.push("/")}>
-        <div>
-          <label htmlFor="email">Login</label>
-          <input type="email" name="" id="email" />
-        </div>
-        <div>
-          <label htmlFor="pass">Password</label>
-          <input type="password" name="" id="pass" />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </main>
+      <div className={`${login.loginWrapper}`}>
+        <LoginForm />
+      </div>
+    </div>
   );
 }
+
+Login.getLayout = function getLayout(page: ReactElement) {
+  return <LayoutLogin>{page}</LayoutLogin>;
+};
