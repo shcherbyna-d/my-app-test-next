@@ -1,0 +1,44 @@
+.inputContainer {
+    margin-bottom: 10px;
+  }
+  
+  .inputContainerError {
+    margin-bottom: 10px;
+  }
+  
+  .input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .inputError {
+    padding: 8px;
+    border: 1px solid #ff0000;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input:hover {
+    border-color: lightgray;
+  }
+  
+  .input:focus {
+    border-color: dodgerblue;
+  }
+  
+  .errorText {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  

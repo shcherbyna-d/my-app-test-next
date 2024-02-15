@@ -30,6 +30,12 @@ export const Navbar = () => {
           About
         </Link>
         <Link
+          href={"/components"}
+          className={currentPath === "/components" ? `${navbar.selected}` : ""}
+        >
+          Components
+        </Link>
+        <Link
           href={"/login"}
         >
           Logout
