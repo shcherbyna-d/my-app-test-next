@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// SelectComponent.tsx
+import React from "react";
 import styles from "./Select.module.scss";
 
 interface Option {
@@ -13,32 +14,26 @@ interface SelectProps {
 }
 
 const Select: React.FC<SelectProps> = ({ options, value, onChange }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleSelect = (optionValue: string) => {
-    onChange(optionValue);
-    setIsOpen(false);
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    onChange(event.target.value);
   };
 
   return (
-    <div className={styles.selectContainer}>
-      <div className={styles.selectedOption} onClick={() => setIsOpen(!isOpen)}>
-        {options.find((option) => option.value === value)?.label || "Select"}
-      </div>
-      {isOpen && (
-        <div className={styles.optionList}>
-          {options.map((option) => (
-            <div
-              key={option.value}
-              className={styles.option}
-              onClick={() => handleSelect(option.value)}
-            >
-              {option.label}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+    <select
+      className={styles.select}
+      value={value}
+      onChange={handleChange}
+    >
+      {options.map((option) => (
+        <option
+          key={option.value}
+          value={option.value}
+          className={styles.option}
+        >
+          {option.label}
+        </option>
+      ))}
+    </select>
   );
 };
 

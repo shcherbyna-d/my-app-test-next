@@ -12,7 +12,7 @@ const TextInput: React.FC<TextInputProps> = ({
   placeholder,
   value,
   onChange,
-  error
+  error,
 }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
@@ -21,6 +21,7 @@ const TextInput: React.FC<TextInputProps> = ({
   return (
     <div className={error ? styles.inputContainerError : styles.inputContainer}>
       <input
+        aria-label="text-input"
         type="type here"
         className={error ? styles.inputError : styles.input}
         placeholder={placeholder}
