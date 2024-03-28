@@ -1,11 +1,8 @@
 import React, { ReactNode, FC } from "react";
-import { Footer } from "../Footer/Footer";
+import { FooterLogin } from "../Footer/FooterLogin";
 import Head from "next/head";
-import { Inter } from "next/font/google";
-import layout from "./Layout.module.scss";
 import { NavbarEmty } from "../Navbar/NavbarEmpty";
-
-const inter = Inter({ subsets: ["latin"] });
+import Image from "next/image";
 
 interface Props {
   children: ReactNode;
@@ -20,14 +17,22 @@ const LayoutLogin: FC<Props> = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={`${inter.className} ${layout.page}`}>
-        <div className={`${layout.navbar}`}>
-          <NavbarEmty />
-        </div>
-        <main className={`${layout.main}`}>{children}</main>
-        <div className={`${layout.footer}`}>
-          <Footer />
-        </div>
+      <div className="flex flex-col h-screen w-full">
+        <main className="flex flex-1 w-full overflow-y-auto pb-16 justify-center items-center">
+          <div className="fixed inset-0 z-0">
+            <Image
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              src="/assets/bg-login.jpg"
+              alt="landscape"
+            />
+          </div>
+          <div className="relative z-10 flex content-center justify-center">{children}</div>
+        </main>
+        <footer className="fixed flex w-full bottom-0 h-14 z-50">
+          <FooterLogin />
+        </footer>
       </div>
     </>
   );

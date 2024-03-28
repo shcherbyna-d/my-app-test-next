@@ -1,10 +1,9 @@
 import React from "react";
-import footer from "./Footer.module.scss";
 
 export const Footer = () => {
   return (
-    <footer className={`${footer.footer}`}>
+    <div className="bg-slate-700 w-full h-full text-slate-50 flex justify-end items-center pr-4 text-xs">
       <p>Copyright © 2024. All rights reserved.</p>
-    </footer>
+    </div>
   );
 };

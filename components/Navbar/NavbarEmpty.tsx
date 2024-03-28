@@ -1,17 +1,9 @@
 import React from "react";
-import navbar from "./Navbar.module.scss";
-import Link from "next/link";
-import { useRouter } from "next/router";
 
 export const NavbarEmty = () => {
-  const router = useRouter();
-
-  const currentPath = router.pathname;
-
   return (
-    <nav className={`${navbar.navbar}`}>
-      <ul>
-      </ul>
+    <nav className="bg-slate-700 w-full h-full text-slate-50 flex justify-around items-center">
+      <ul></ul>
     </nav>
   );
 };

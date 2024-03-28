@@ -2,10 +2,6 @@ import React, { ReactNode, FC } from "react";
 import { Navbar } from "../Navbar/Navbar";
 import { Footer } from "../Footer/Footer";
 import Head from "next/head";
-import { Inter } from "next/font/google";
-import layout from "./Layout.module.scss";
-
-const inter = Inter({ subsets: ["latin"] });
 
 interface Props {
   children: ReactNode;
@@ -20,14 +16,16 @@ const Layout: FC<Props> = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={`${inter.className} ${layout.page}`}>
-        <div className={`${layout.navbar}`}>
+      <div className="flex flex-col h-screen w-full">
+        <header className="fixed w-full top-0 h-16">
           <Navbar />
-        </div>
-        <main className={`${layout.main}`}>{children}</main>
-        <div className={`${layout.footer}`}>
+        </header>
+        <main className="flex flex-1 w-full pt-16 pb-16">
+          <div className=" w-full h-full bg-slate-100 p-5">{children}</div>
+        </main>
+        <footer className="fixed flex w-full bottom-0 h-16 z-50">
           <Footer />
-        </div>
+        </footer>
       </div>
     </>
   );

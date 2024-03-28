@@ -23,7 +23,7 @@ export default function Components() {
 
   return (
     <div>
-      <h2>Components</h2>
+      <h1 className=" text-xl mb-5">Components</h1>
       <ul>
         <li key={0}>
           <TextInput

@@ -1,15 +1,11 @@
 import LayoutLogin from "@/components/Layout/LayoutLogin";
 import { LoginForm } from "@/components/LoginForm/LoginForm";
 import React, { ReactElement } from "react";
-import login from "@/components/LoginForm/LoginForm.module.scss";
 
 export default function Login() {
   return (
-    <div className={`${login.loginPage}`}>
-      <h2>Login page</h2>
-      <div className={`${login.loginWrapper}`}>
-        <LoginForm />
-      </div>
+    <div className="bg-slate-200 bg-opacity-50 backdrop-blur-lg rounded-lg p-5">
+      <LoginForm />
     </div>
   );
 }
