@@ -40,6 +40,12 @@ export const Navbar = () => {
         >
           Components
         </Link>
+        <Link
+          href={"/pokemons"}
+          className={currentPath === "/pokemons" ? `text-slate-400` : ""}
+        >
+          Pokemons
+        </Link>
         <Link href={"/login"}>Logout</Link>
       </ul>
       <button
@@ -82,6 +88,12 @@ export const Navbar = () => {
           onClick={toogleMobileMenu}
         >
           Components
+        </Link>
+        <Link
+          href={"/pokemons"}
+          className={currentPath === "/pokemons" ? `text-slate-400` : ""}
+        >
+          Pokemons
         </Link>
         <Link href={"/login"} onClick={toogleMobileMenu}>
           Logout
