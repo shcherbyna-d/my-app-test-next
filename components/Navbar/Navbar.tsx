@@ -15,7 +15,7 @@ export const Navbar = () => {
 
   return (
     <nav className="w-full bg-slate-700 h-full text-slate-50 flex items-center relative">
-      <ul className="w-full hidden md:flex md:justify-around md:items-center ">
+      <ul className="w-full hidden md:flex md:justify-around md:items-center">
         <Link
           href={"/"}
           className={currentPath === "/" ? `text-slate-400` : ""}

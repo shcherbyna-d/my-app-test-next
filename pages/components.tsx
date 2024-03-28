@@ -23,16 +23,16 @@ export default function Components() {
 
   return (
     <div>
-      <h1 className=" text-xl mb-5">Components</h1>
+      <h1 className="text-xl mb-5">Components</h1>
       <ul>
-        <li key={0}>
+        <li>
           <TextInput
             placeholder="Enter text..."
             value={inputValue}
             onChange={handleChange}
           />
         </li>
-        <li key={1}>
+        <li>
           <Select
             options={options}
             value={selectedValue}

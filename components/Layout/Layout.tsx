@@ -17,13 +17,13 @@ const Layout: FC<Props> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col h-screen w-full">
-        <header className="fixed w-full top-0 h-16">
+        <header className="fixed w-full top-0 h-16 z-20">
           <Navbar />
         </header>
-        <main className="flex flex-1 w-full pt-16 pb-16">
-          <div className=" w-full h-full bg-slate-100 p-5">{children}</div>
+        <main className="flex-1 w-full pt-16 pb-16">
+          <div className="w-full h-full bg-slate-100 p-5">{children}</div>
         </main>
-        <footer className="fixed flex w-full bottom-0 h-16 z-50">
+        <footer className="fixed flex w-full bottom-0 h-16">
           <Footer />
         </footer>
       </div>
